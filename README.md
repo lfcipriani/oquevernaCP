@@ -1,4 +1,5 @@
-oquevernaCP
-===========
+# @oquevernaCP
 
-Twitter bot to help Campus Party Brasil 2014 attendants know what to see right now in the event
+It's a Twitter bot for agenda recomendations at Campus Party Brasil.
+
+Instructions soon...
