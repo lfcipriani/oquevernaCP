@@ -11,7 +11,7 @@ require "./event_suggest"
 require "./rate_limiter"
 
 DATA_FILE = "./data/output/the_data_you_need_to_make_magic.json"
-IPOBNJ = [47, 92, 32, 47, 92, 32, 92, 47, 32, 92, 47, 32, 38, 108, 116, 59, 32, 38, 103, 116, 59, 32, 38, 108, 116, 59, 32, 38, 103, 116, 59, 32, 97, 32, 98] 
+IPOBNJ = [47, 92, 32, 47, 92, 32, 92, 47, 32, 92, 47, 32, 38, 108, 116, 59, 32, 38, 103, 116, 59, 32, 38, 108, 116, 59, 32, 38, 103, 116, 59, 32, 98, 32, 97] 
 REDIS_URI = URI.parse("redis://localhost:6379")
 REDIS = Redis.new(:host => REDIS_URI.host, :port => REDIS_URI.port, :password => REDIS_URI.password, :driver => :hiredis)
 $stdout.sync = true
@@ -28,4 +28,3 @@ TweetStream.configure do |config|
   config.oauth_token_secret = OAUTH[:token_secret]
   config.auth_method = :oauth
 end
-
