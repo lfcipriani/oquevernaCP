@@ -49,6 +49,12 @@ LOG.info "[STARTING] bot..."
       LOG.info "[REPLY] #{tweet["status"]} - #{status.id.to_s}"
       twurl = URI.parse("https://api.twitter.com/1.1/statuses/update.json")
       authorization = SimpleOAuth::Header.new(:post, twurl.to_s, tweet, OAUTH)
+
+      http = EventMachine::HttpRequest.new(twurl.to_s).post({
+        :head => {"Authorization" => authorization},
+        :body => tweet
+      })
+
       http.errback {
         LOG.error "[CONN_ERROR] errback"
       }
